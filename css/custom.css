@@ -8,7 +8,7 @@ html, body{
   font-family: Montserrat;
 }
 .nasacover {
-  background-image: url('../img/nasa.jpg');
+  background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('../img/nasa.jpg');
   background-position: right bottom;
   background-repeat: no-repeat;
   background-size: cover;
