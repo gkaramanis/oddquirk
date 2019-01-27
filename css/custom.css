@@ -1,0 +1,16 @@
+@font-face {
+    font-family: Montserrat;
+    src: url('montserrat/Montserrat-Regular.ttf');
+}
+
+html, body{
+  height: 100%;
+  font-family: Montserrat;
+}
+.nasacover {
+  background-image: url('../img/nasa.jpg');
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100% auto;
+}

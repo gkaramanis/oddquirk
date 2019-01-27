@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Bare - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="css/custom.css" rel="stylesheet">
+  <!-- jQuery  -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <script>
+    $.get("navigation.html", function(data) {
+      $("#nav-placeholder").replaceWith(data);
+    });
+    $(document).ready(function() {
+           $('a[href="' + this.location.pathname.slice(1) + '"]').parent().addClass('active');
+       });
+         </script>
+  <div id="nav-placeholder"></div>
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center" class="w-75">
+        <img src="img/q-bot-logo.png" class="w-25 mt-5">
+        <h4 class="mt-5">A CHATBOT MADE FOR HEALTH CARE GIVERS</h4>
+        <img src="img/q-bot-hero.jpg" class="w-75 mt-3">
+      </div>
+    </div>
+
+    <div class="row mt-5" class="w-75">
+  <div class="col-md-4 card">
+    <div class="card-img-top"><img src="img/q-bot-1.png" class="w-100 img-fluid"></div>
+    <div>
+      <h4 class="card-title">More patients</h4>
+      <p class="card-text">Two-way communication is shown to reduce no-shows and increase cancellation and rescheduling rates.</p>
+    </div>
+  </div>
+  <div class="col-md-4 card">
+    <div class="card-img-top"><img src="img/q-bot-2.png" class="w-100 img-fluid"></div>
+    <div>
+      <h4 class="card-title">Easy</h4>
+       <p class="card-text">Automated management of appointments in your EMR reduces personnel costs and staff stress.</p>
+     </div>
+  </div>
+  <div class="col-md-4 card">
+    <div class="card-img-top"><img src="img/q-bot-3.png" class="w-100 img-fluid"></div>
+    <div>
+      <h4 class="card-title">Expandable</h4>
+      <p class="card-text">Send customized information and follow-up questions, scheduled or on demand.</p>
+    </div>
+  </div>
+</div>
+<footer class="fixed-bottom">
+<p></p>
+</footer>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
