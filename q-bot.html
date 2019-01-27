@@ -26,9 +26,9 @@
       $("#nav-placeholder").replaceWith(data);
     });
     $(document).ready(function() {
-           $('a[href="' + this.location.pathname.slice(1) + '"]').parent().addClass('active');
-       });
-         </script>
+      $('a[href="' + this.location.pathname.slice(1) + '"]').parent().addClass('active');
+    });
+  </script>
   <div id="nav-placeholder"></div>
 
   <!-- Page Content -->
@@ -41,32 +41,29 @@
       </div>
     </div>
 
-    <div class="row mt-5" class="w-75">
-  <div class="col-md-4 card">
-    <div class="card-img-top"><img src="img/q-bot-1.png" class="w-100 img-fluid"></div>
-    <div>
-      <h4 class="card-title">More patients</h4>
-      <p class="card-text">Two-way communication is shown to reduce no-shows and increase cancellation and rescheduling rates.</p>
+    <div class="row mt-5 card-deck">
+      <div class="card">
+        <img src="img/q-bot-1.png" class="card-img-top">
+        <div class="card-body bg-warning">
+          <h4 class="card-title">More patients</h4>
+          <p class="card-text">Two-way communication is shown to reduce no-shows and increase cancellation and rescheduling rates.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/q-bot-2.png" class="card-img-top">
+        <div class="card-body bg-warning">
+          <h4 class="card-title">Easy</h4>
+          <p class="card-text">Automated management of appointments in your EMR reduces personnel costs and staff stress.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/q-bot-3.png" class="card-img-top">
+        <div class="card-body bg-warning">
+          <h4 class="card-title">Expandable</h4>
+          <p class="card-text">Send customized information and follow-up questions, scheduled or on demand.</p>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="col-md-4 card">
-    <div class="card-img-top"><img src="img/q-bot-2.png" class="w-100 img-fluid"></div>
-    <div>
-      <h4 class="card-title">Easy</h4>
-       <p class="card-text">Automated management of appointments in your EMR reduces personnel costs and staff stress.</p>
-     </div>
-  </div>
-  <div class="col-md-4 card">
-    <div class="card-img-top"><img src="img/q-bot-3.png" class="w-100 img-fluid"></div>
-    <div>
-      <h4 class="card-title">Expandable</h4>
-      <p class="card-text">Send customized information and follow-up questions, scheduled or on demand.</p>
-    </div>
-  </div>
-</div>
-<footer class="fixed-bottom">
-<p></p>
-</footer>
   </div>
 
   <!-- Bootstrap core JavaScript -->
