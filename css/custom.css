@@ -14,3 +14,7 @@ html, body{
   background-size: cover;
   height: 100% auto;
 }
+
+.embed-responsive-5by3{
+   padding-bottom: 60%;
+}
