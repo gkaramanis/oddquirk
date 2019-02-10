@@ -55,9 +55,9 @@
 
         <div id="app" class="container-fluid">
           <div class="row">
-            <div class="col-sm-6 well">
+            <div class="col-sm-6 well pr-4">
               <div class="row">
-                <textarea v-on:input="parseInput" v-model="textInput" placeholder="Klistra in text eller skriv" rows="5"></textarea>
+                <textarea class="form-control" v-on:input="parseInput" v-model="textInput" placeholder="Klistra in text eller skriv" rows="5"></textarea>
               </div>
               <div class="row">
                 <p> Patienten tar {{dailyDose}} tabletter varje dag</br>
