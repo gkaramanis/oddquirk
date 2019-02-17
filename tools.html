@@ -124,8 +124,7 @@
               times: 3,
               package: 25,
               packnum: 1,
-              refills: 1,
-              refillsInput: 1,
+              refills: 1
             },
 
             computed: {
@@ -133,10 +132,10 @@
                 return moment().subtract(30, 'days').format('YYYY-MM-DD');
               },
               endDate: function() {
-                return moment(this.prescrDate).add(5, 'days').format('YYYY-MM-DD');
+                return moment(this.prescrDate).add(this.enoughFor, 'days').format('YYYY-MM-DD');
               },
               enoughFor: function() {
-                return Math.round((this.packnum * this.package) / (this.dose * this.times));
+                return Math.round((this.packnum * this.package * this.refills) / (this.dose * this.times));
               },
               dailyDose: function() {
                 return this.dose * this.times;
