@@ -60,34 +60,44 @@
                 <textarea class="form-control" v-on:input="parseInput" v-model="textInput" placeholder="Klistra in text eller skriv" rows="5"></textarea>
               </div>
               <div class="row">
-                <p> Patienten tar {{dailyDose}} tabletter varje dag</br>
-                  Det borde räcka för {{enoughFor}} dagar, till den {{endDate}}</p>
+                <p> Patienten tar <code>{{dailyDose}}</code> tabletter varje dag</br>
+                  Det borde räcka för <code>{{enoughFor}}</code> dagar, till den <code>{{endDate}}</code></p>
               </div>
             </div>
 
             <div class="col-sm-6 well">
               <div class="row">
-                <p style="display: inline;white-space:nowrap;">Patienten tar</p>
-                <el-input-number v-model="dose" size="mini" :min="1" :max="10">
+                <div class="col">
+                <el-input-number label="tabletter" v-model="dose" size="mini" :min="1" :max="10">
                 </el-input-number>
-                x
+                <p style="display: inline;white-space:nowrap;">tabletter</p>
+              </div>
+                <div class="col">
                 <el-input-number v-model="times" size="mini" :min="1" :max="10">
                 </el-input-number>
                 per dygn
               </div>
+              </div>
 
               <div class="row">
+                <div class="col">
                 <el-input-number v-model="packnum" size="mini" :min="1" :max="15">
                 </el-input-number>
                 <p style="display: inline;white-space:nowrap;">förpackning med </p>
+              </div>
+              <div class="col">
                 <select v-model="package">
                   <option v-for="(value, key) in packageInput">{{value}}</option>
                 </select>
                 <p style="display: inline;white-space:nowrap;">st. och</p>
+              </div>
+
+                <div class="col">
                 <el-input-number v-model="refills" size="mini" :min="1" :max="8">
                 </el-input-number>
                 <p style="display: inline;white-space:nowrap;">uttag</p>
                 </p>
+                </div>
               </div>
 
               <div class="row">
