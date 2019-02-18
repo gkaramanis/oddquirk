@@ -68,34 +68,42 @@
             <div class="col-sm-6 well">
               <div class="row">
                 <div class="col">
-                <el-input-number label="tabletter" v-model="dose" size="mini" :min="1" :max="10">
-                </el-input-number>
-                <p style="display: inline;white-space:nowrap;">tabletter</p>
+                    <label>
+                <input v-model="dose" size="mini" :min="1" :max="10">
+                  </input>
+                  tabletter </label>
               </div>
                 <div class="col">
-                <el-input-number v-model="times" size="mini" :min="1" :max="10">
-                </el-input-number>
-                per dygn
+                    <label>
+                <input v-model="times" size="mini" :min="1" :max="10">
+                </input>
+                per dygn</label>
               </div>
               </div>
 
               <div class="row">
                 <div class="col">
-                <el-input-number v-model="packnum" size="mini" :min="1" :max="15">
-                </el-input-number>
-                <p style="display: inline;white-space:nowrap;">förpackning med </p>
+                    <div class="input-group">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">förpacning</span>
+                <input v-model="packnum" size="mini" :min="1" :max="15">
+                </input>
+               </div>
+               </div>
               </div>
               <div class="col">
+                  <label>
                 <select v-model="package">
                   <option v-for="(value, key) in packageInput">{{value}}</option>
                 </select>
-                <p style="display: inline;white-space:nowrap;">st. och</p>
+                st. </label>
               </div>
 
                 <div class="col">
-                <el-input-number v-model="refills" size="mini" :min="1" :max="8">
-                </el-input-number>
-                <p style="display: inline;white-space:nowrap;">uttag</p>
+                    <label>
+                <input v-model="refills" size="mini" :min="1" :max="8">
+                </input>
+                uttag</label>
                 </p>
                 </div>
               </div>
@@ -107,7 +115,6 @@
 
             </div>
           </div>
-
 
         </div>
 
