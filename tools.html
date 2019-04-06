@@ -93,9 +93,8 @@
               </div>
               <div class="col">
                   <label>
-                <select v-model="package">
-                  <option v-for="(value, key) in packageInput">{{value}}</option>
-                </select>
+                <input v-model="package" size="mini" :min="10" :max="100" :step="5">
+                </input>
                 st. </label>
               </div>
 
@@ -123,20 +122,6 @@
             el: '#app',
             data: {
               textInput: '',
-              packnumInput: {
-                1: 1,
-                2: 2,
-                3: 3,
-                4: 4,
-                5: 5
-              },
-              packageInput: {
-                1: 10,
-                2: 25,
-                3: 30,
-                4: 50,
-                5: 100
-              },
               dose: 1,
               times: 3,
               package: 25,
