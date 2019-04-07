@@ -67,24 +67,24 @@
 
             <div class="col-sm-6 well">
               
-                tabletter
+                {{dose}} tabletter
                 <el-slider v-model="dose" size="mini" :min="1" :max="10">
                   </el-slider>
               
 
-           	per dygn
+           	{{times}} gånger per dygn
                 <span></span><el-slider v-model="times" size="mini" :min="1" :max="10">
                 </el-slider></span>         
 
-              förpackningar
+              {{packnum}} förpackningar
                 <el-slider v-model="packnum" size="mini" :min="1" :max="15">
                 </el-slider>
                 
-                st.
+                {{package}} st.
                 <el-slider v-model="package" size="mini" :min="10" :max="100" :step="5">
                 </el-slider>
                
-               uttag
+               {{refills}} uttag
                 <el-slider v-model="refills" size="mini" :min="1" :max="8">
                 </el-slider>
                
