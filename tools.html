@@ -66,51 +66,30 @@
             </div>
 
             <div class="col-sm-6 well">
-              <div class="row">
-                <div class="col">
-                    <label>
-                <input v-model="dose" size="mini" :min="1" :max="10">
-                  </input>
-                  tabletter </label>
-              </div>
-                <div class="col">
-                    <label>
-                <input v-model="times" size="mini" :min="1" :max="10">
-                </input>
-                per dygn</label>
-              </div>
-              </div>
+              
+                tabletter
+                <el-slider v-model="dose" size="mini" :min="1" :max="10">
+                  </el-slider>
+              
 
-              <div class="row">
-                <div class="col">
-                    <div class="input-group">
-                    <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">förpacning</span>
-                <input v-model="packnum" size="mini" :min="1" :max="15">
-                </input>
-               </div>
-               </div>
-              </div>
-              <div class="col">
-                  <label>
-                <input v-model="package" size="mini" :min="10" :max="100" :step="5">
-                </input>
-                st. </label>
-              </div>
+           	per dygn
+                <span></span><el-slider v-model="times" size="mini" :min="1" :max="10">
+                </el-slider></span>         
 
-                <div class="col">
-                    <label>
-                <input v-model="refills" size="mini" :min="1" :max="8">
-                </input>
-                uttag</label>
-                </p>
-                </div>
-              </div>
-
-              <div class="row">
+              förpackningar
+                <el-slider v-model="packnum" size="mini" :min="1" :max="15">
+                </el-slider>
+                
+                st.
+                <el-slider v-model="package" size="mini" :min="10" :max="100" :step="5">
+                </el-slider>
+               
+               uttag
+                <el-slider v-model="refills" size="mini" :min="1" :max="8">
+                </el-slider>
+               
                 <el-date-picker v-model="prescrDate" type="date" placeholder="Välj ett datum">
                 </el-date-picker>
-              </div>
 
             </div>
           </div>
