@@ -27,11 +27,21 @@
   <!-- jQuery  -->
   <script src="vendor/jquery/jquery.min.js"></script>
 
-  <!-- Vuejs, momentjs, elementUI -->
-  <script src="https://unpkg.com/vue"></script>
-  <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css">
+  <!-- Load required Bootstrap and BootstrapVue CSS -->
+  <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+  <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
+
+  <!-- Load polyfills to support older browsers -->
+  <script src="//polyfill.io/v3/polyfill.min.js?features=es2015%2CMutationObserver" crossorigin="anonymous"></script>
+
+  <!-- Load Vue followed by BootstrapVue -->
+  <script src="//unpkg.com/vue@latest/dist/vue.min.js"></script>
+  <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+  
+  
+  <!-- Load Moment.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
+  
 </head>
 
 <body>
@@ -67,15 +77,18 @@
 
             <div class="col-sm-6 well">
 
+<!--
               <b-input-group>
                 <b-input-group-text slot="append">{{dose}}</b-input-group-text>
                 <b-input-group-text slot="append">tabletter</b-input-group-text>
               	<b-form-input type="range" v-model="dose"  min="1" max="10"></b-form-input>
               </b-input-group>
+-->
+
 
               <b-input-group class="mt-2">
-                <b-input-group-text slot="append">{{times}}</b-input-group-text>
-                <b-input-group-text slot="append">gånger per dygn</b-input-group-text>
+                <b-input-group-text slot="append">{{dailyDose}}</b-input-group-text>
+                <b-input-group-text slot="append">tabletter per dygn</b-input-group-text>
                 <b-form-input type="range" v-model="times" size="mini" :min="1" :max="10">
                 </b-form-input type="range">
               </b-input-group>
