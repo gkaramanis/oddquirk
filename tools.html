@@ -133,13 +133,14 @@
               times: 3,
               package: 25,
               packnum: 1,
-              refills: 1
+              refills: 1,
+				prescrDate: moment().format('YYYY-MM-DD')
             },
 
             computed: {
-              prescrDate: function() {
-                return moment().subtract(30, 'days').format('YYYY-MM-DD');
-              },
+              // prescrDate: function() {
+ //                return moment().subtract(30, 'days').format('YYYY-MM-DD');
+ //              },
               endDate: function() {
                 return moment(this.prescrDate).add(this.enoughFor, 'days').format('YYYY-MM-DD');
               },
