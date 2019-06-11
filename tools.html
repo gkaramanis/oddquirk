@@ -154,7 +154,10 @@
             },
             methods: {
               parseInput: function(event) {
-				  prescrDate = (\d{4}-\d{2}-\d{2});
+				date_regex = /(\d{4}-\d{2}-\d{2})/;
+				if (date_regex.test(this.textInput)) {
+					this.prescrDate = date_regex.exec(this.textInput)[1];
+				}
                 dose_regex = /(\d+)-?(\d*)(\s+(tabl|kaps))/;
                 times_regex = /(\d+)\s+gång/;
                 timeofday_regex = /(till|på|kl)\s+(morgonen|frukost|lunch|kvällen|natten|\d{2}:\d{2})*/g; // g is needed here!;
