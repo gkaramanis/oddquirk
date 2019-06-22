@@ -16,8 +16,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <meta name="author" content="">
-
+  <meta name="author" content="Quirk">
   <title>Quirk - Tools</title>
 
   <!-- Bootstrap core CSS -->
@@ -59,70 +58,109 @@
 
   <!-- Page Content -->
   <div class="container">
+      <div id="app" class="container-fluid">
     <div class="row">
-      <div class="col-lg-12 text-left">
-        <h1 class="mt-5">Tabletträknare</h1>
+      <div class="col-lg-12 text-left mt-5">
+		  
+		  
+		  <div>
+		    <b-card no-body>
+		      <b-tabs pills card no-fade
+		content-class="mt-5"
+		nav-class="h3"
+		active-nav-item-class="bg-warning">
+		
+		        <b-tab title="Tabletträknare" active>
+		          <b-card-text>
+				            <div class="row">
+				              <div class="col-sm-6 well pr-4">
+				                <div class="row">
+				                  <textarea class="form-control" v-on:input="parseInput" v-model="textInput" placeholder="Klistra in text eller skriv (Inga data sparas)" rows="5"></textarea>
+				                </div>
+				                <div class="row">
+				                  <p> Patienten tar <code>{{dailyDose}}</code> tabletter varje dag<br>
+				                    Det borde räcka för <code>{{enoughFor}}</code> dagar, till den <code>{{endDate}}</code></p>
+				                </div>
+				              </div>
 
-        <div id="app" class="container-fluid">
-          <div class="row">
-            <div class="col-sm-6 well pr-4">
-              <div class="row">
-                <textarea class="form-control" v-on:input="parseInput" v-model="textInput" placeholder="Klistra in text eller skriv (Inga data sparas)" rows="5"></textarea>
-              </div>
-              <div class="row">
-                <p> Patienten tar <code>{{dailyDose}}</code> tabletter varje dag</br>
-                  Det borde räcka för <code>{{enoughFor}}</code> dagar, till den <code>{{endDate}}</code></p>
-              </div>
-            </div>
+				              <div class="col-sm-6 well mb-5">
 
-            <div class="col-sm-6 well">
+				  <!--
+				                <b-input-group>
+				                  <b-input-group-text slot="append">{{dose}}</b-input-group-text>
+				                  <b-input-group-text slot="append">tabletter</b-input-group-text>
+				                	<b-form-input type="range" v-model="dose"  min="1" max="10"></b-form-input>
+				                </b-input-group>
+				  -->
 
-<!--
-              <b-input-group>
-                <b-input-group-text slot="append">{{dose}}</b-input-group-text>
-                <b-input-group-text slot="append">tabletter</b-input-group-text>
-              	<b-form-input type="range" v-model="dose"  min="1" max="10"></b-form-input>
-              </b-input-group>
--->
+				                <b-input-group class="mt-2">
+				                  <b-input-group-text slot="append">{{dailyDose}}</b-input-group-text>
+				                  <b-input-group-text slot="append">tabletter per dygn</b-input-group-text>
+				                  <b-form-input type="range" v-model="times" size="mini" :min="1" :max="10">
+				                  </b-form-input type="range">
+				                </b-input-group>
 
-
-              <b-input-group class="mt-2">
-                <b-input-group-text slot="append">{{dailyDose}}</b-input-group-text>
-                <b-input-group-text slot="append">tabletter per dygn</b-input-group-text>
-                <b-form-input type="range" v-model="times" size="mini" :min="1" :max="10">
-                </b-form-input type="range">
-              </b-input-group>
-
-                <b-input-group class="mt-2">
-                <b-input-group-text slot="append">{{packnum}}</b-input-group-text>
-                <b-input-group-text slot="append">förpackningar</b-input-group-text>
-                <b-form-input type="range" v-model="packnum" size="mini" :min="1" :max="15">
-                </b-form-input type="range">
-              </b-input-group>
-
+				                  <b-input-group class="mt-2">
+				                  <b-input-group-text slot="append">{{packnum}}</b-input-group-text>
+				                  <b-input-group-text slot="append">förpackningar</b-input-group-text>
+				                  <b-form-input type="range" v-model="packnum" size="mini" :min="1" :max="15">
+				                  </b-form-input type="range">
+				                </b-input-group>
                 
-                <b-input-group class="mt-2">
-                <b-input-group-text slot="append">{{package}}</b-input-group-text>
-                <b-input-group-text slot="append">st. i varje förp.</b-input-group-text>
-                <b-form-input type="range" v-model="package" size="mini" :min="10" :max="100" :step="5">
-                </b-input-group>
+				                  <b-input-group class="mt-2">
+				                  <b-input-group-text slot="append">{{package}}</b-input-group-text>
+				                  <b-input-group-text slot="append">st. i varje förp.</b-input-group-text>
+				                  <b-form-input type="range" v-model="package" size="mini" :min="10" :max="100" :step="5">
+				                  </b-input-group>
 
-                <b-input-group class="mt-2">
-                <b-input-group-text slot="append">{{refills}}</b-input-group-text>
-                <b-input-group-text slot="append">uttag</b-input-group-text>
-                <b-form-input type="range" v-model="refills" size="mini" :min="1" :max="8">
-                </b-form-input type="range">
-              </b-input-group>
+				                  <b-input-group class="mt-2">
+				                  <b-input-group-text slot="append">{{refills}}</b-input-group-text>
+				                  <b-input-group-text slot="append">uttag</b-input-group-text>
+				                  <b-form-input type="range" v-model="refills" size="mini" :min="1" :max="8">
+				                  </b-form-input type="range">
+				                </b-input-group>
  
-                Utskrivet den
+				                  Utskrivet den
 
-                <b-form-input type="date" v-model="prescrDate" type="date" placeholder="Välj ett datum">
-                </b-input-group>
+				                  <b-form-input type="date" v-model="prescrDate" type="date" placeholder="Välj ett datum">
+				                  </b-input-group>
+				              </div>
+				            </div>
+				</b-card-text>		
+		        </b-tab>
+		        <b-tab title="BMI-räknare">
+		          <b-card-text>
+	  			<div class="row">
+	             <div class="col-sm-6 well pr-4">
+	                <div class="row d-flex justify-content-center">
+	  				   <h2>{{bmi}}</h2>
+	  			  </div>
+	  		</div>
 
-            </div>
-          </div>
-
+	              <div class="col-sm-6 well mb-5">
+			  
+	                <b-input-group class="mt-2">
+	                  <b-input-group-text slot="append">{{weight}}</b-input-group-text>
+	                  <b-input-group-text slot="append">kg</b-input-group-text>
+	                  <b-form-input type="range" v-model="weight" size="mini" :min="40" :max="220">
+	                  </b-form-input type="range">
+	                </b-input-group>
+			
+	                <b-input-group class="mt-2">
+	                  <b-input-group-text slot="append">{{height}}</b-input-group-text>
+	                  <b-input-group-text slot="append">cm</b-input-group-text>
+	                  <b-form-input type="range" v-model="height" size="mini" :min="140" :max="220">
+	                  </b-form-input type="range">
+	                </b-input-group>
+	              </div>
+			  </b-card-text>
+		        </b-tab>
+		      </b-tabs>
+		    </b-card>
+		  </div>	  
         </div>
+	</div>
+</div>
 
         <script>
           var app = new Vue({
@@ -134,7 +172,10 @@
               	package: 25,
               	packnum: 1,
               	refills: 1,
-				prescrDate: moment().format('YYYY-MM-DD')
+				prescrDate: moment().format('YYYY-MM-DD'),
+				
+				weight: 65,
+				height: 170
             },
 
             computed: {
@@ -149,7 +190,10 @@
               },
               dailyDose: function() {
                 return this.dose * this.times;
-              }
+              },
+			  bmi: function() {
+				  return (this.weight / Math.pow(this.height/100, 2)).toFixed(1);
+			  }
             },
             methods: {
               parseInput: function(event) {
