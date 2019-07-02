@@ -66,8 +66,8 @@
 		      <b-tabs pills card no-fade nav-class="h3" active-nav-item-class="bg-warning">
 		        <b-tab title="Tabletträknare" active>
 		          <b-card-text>
-				            <div class="row">
-				              <div class="col-sm-6 well pr-4">
+				            <div class="row justify-content-center" >
+				              <div class="col-8">
 				                <div class="row">
 				                  <textarea class="form-control" v-on:input="parseInput" v-model="textInput" placeholder="Klistra in text eller skriv (Inga data sparas)" rows="5"></textarea>
 				                </div>
@@ -75,17 +75,6 @@
 				                  <p> Patienten tar <code>{{dailyDose}}</code> tabletter varje dag<br>
 				                    Det borde räcka för <code>{{enoughFor}}</code> dagar, till den <code>{{endDate}}</code></p>
 				                </div>
-				              </div>
-
-				              <div class="col-sm-6 well mb-5">
-
-				  <!--
-				                <b-input-group>
-				                  <b-input-group-text slot="append">{{dose}}</b-input-group-text>
-				                  <b-input-group-text slot="append">tabletter</b-input-group-text>
-				                	<b-form-input type="range" v-model="dose"  min="1" max="10"></b-form-input>
-				                </b-input-group>
-				  -->
 
 				                <b-input-group class="mt-2">
 				                  <b-input-group-text slot="append">{{dailyDose}}</b-input-group-text>
@@ -118,21 +107,19 @@
 
 				                  <b-form-input type="date" v-model="prescrDate" type="date" placeholder="Välj ett datum">
 				                  </b-input-group>
-				              </div>
 				            </div>
+			              </div>
+							
 				</b-card-text>		
 		        </b-tab>
 		        <b-tab title="BMI-räknare">
 		          <b-card-text>
-	  			<div class="row">
-	             <div class="col-sm-6 well pr-4">
+	  			<div class="row justify-content-center">
+	             <div class="col-8">
 	                <div class="row d-flex justify-content-center">
 	  				   <h2>{{bmi}}</h2>
-	  			  </div>
 	  		</div>
-
-	              <div class="col-sm-6 well mb-5">
-			  
+						  
 	                <b-input-group class="mt-2">
 	                  <b-input-group-text slot="append">{{weight}}</b-input-group-text>
 	                  <b-input-group-text slot="append">kg</b-input-group-text>
@@ -146,7 +133,7 @@
 	                  <b-form-input type="range" v-model="height" size="mini" :min="140" :max="220">
 	                  </b-form-input type="range">
 	                </b-input-group>
-	              </div>
+  	  			  </div>
 			  </b-card-text>
 		        </b-tab>
 		      </b-tabs>
