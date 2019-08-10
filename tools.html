@@ -77,7 +77,7 @@
 				                </div>
 
 				                <b-input-group class="mt-2">
-				                  <b-input-group-text slot="append">{{dailyDose}}</b-input-group-text>
+				                  <b-input-group-text slot="append"><b-form-input>{{dailyDose}}</b-form-input></b-input-group-text>
 				                  <b-input-group-text slot="append">tabletter per dygn</b-input-group-text>
 				                  <b-form-input type="range" v-model="times" size="mini" :min="1" :max="10">
 				                  </b-form-input type="range">
