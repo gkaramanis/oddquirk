@@ -120,19 +120,14 @@
 	  				   <h2>{{bmi}}</h2>
 	  		</div>
 						  
-	                <b-input-group class="mt-2">
-	                  <b-input-group-text slot="append">{{weight}}</b-input-group-text>
-	                  <b-input-group-text slot="append">kg</b-input-group-text>
-	                  <b-form-input type="range" v-model="weight" size="mini" :min="40" :max="220">
-	                  </b-form-input type="range">
-	                </b-input-group>
-			
-	                <b-input-group class="mt-2">
-	                  <b-input-group-text slot="append">{{height}}</b-input-group-text>
-	                  <b-input-group-text slot="append">cm</b-input-group-text>
-	                  <b-form-input type="range" v-model="height" size="mini" :min="140" :max="220">
-	                  </b-form-input type="range">
-	                </b-input-group>
+	                <b-input-group prepend="kg" class="mt-2" >
+                  <b-form-input v-model="weight" size="mini" :min="10" :max="300">{{weight}}</b-form-input>
+					</b-input-group>
+	                 
+					
+	                <b-input-group prepend="cm" class="mt-2" >
+					<b-form-input v-model="height" size="mini" :min="10" :max="230">{{height}}</b-form-input>
+					</b-input-group>
   	  			  </div>
 			  </b-card-text>
 		        </b-tab>
