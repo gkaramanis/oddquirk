@@ -37,7 +37,6 @@
   <script src="//unpkg.com/vue@latest/dist/vue.min.js"></script>
   <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
   
-  
   <!-- Load Moment.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
   
@@ -78,29 +77,29 @@
 
 				                <b-input-group class="mt-2">
 				                  <b-input-group-text slot="append">{{dailyDose}}</b-input-group-text>
-				                  <b-input-group-text slot="append">tabletter per dygn</b-input-group-text>
-				                  <b-form-input type="range" v-model="times" size="mini" :min="1" :max="10">
-				                  </b-form-input type="range">
+				                  <b-input-group-text slot="append">tabletter dygn</b-input-group-text>
+				                  <b-form-input type="number" v-model="times" size="large" :min="1" :step="1">
+				                  </b-form-input type="number">
 				                </b-input-group>
 
 				                  <b-input-group class="mt-2">
 				                  <b-input-group-text slot="append">{{packnum}}</b-input-group-text>
 				                  <b-input-group-text slot="append">förpackningar</b-input-group-text>
-				                  <b-form-input type="range" v-model="packnum" size="mini" :min="1" :max="15">
-				                  </b-form-input type="range">
+				                  <b-form-input type="number" v-model="packnum" size="mini" :min="1" :max="15">
+				                  </b-form-input type="number">
 				                </b-input-group>
                 
 				                  <b-input-group class="mt-2">
 				                  <b-input-group-text slot="append">{{package}}</b-input-group-text>
 				                  <b-input-group-text slot="append">st. i varje förp.</b-input-group-text>
-				                  <b-form-input type="range" v-model="package" size="mini" :min="10" :max="100" :step="5">
-				                  </b-input-group>
+				                  <b-form-input type="number" v-model="package" size="mini" :min="10" :max="400" :step="5">
+				                  </b-input-group type="number">
 
 				                  <b-input-group class="mt-2">
 				                  <b-input-group-text slot="append">{{refills}}</b-input-group-text>
 				                  <b-input-group-text slot="append">uttag</b-input-group-text>
-				                  <b-form-input type="range" v-model="refills" size="mini" :min="1" :max="8">
-				                  </b-form-input type="range">
+				                  <b-form-input type="number" v-model="refills" size="mini" :min="1" :max="10">
+				                  </b-form-input type="number">
 				                </b-input-group>
  
 				                  Utskrivet den
