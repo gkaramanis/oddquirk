@@ -74,7 +74,7 @@
 				                    Det borde räcka för <code>{{enoughFor}}</code> dagar, till den <code>{{endDate}}</code></p>
 				                </div>
 								
-				                <b-input-group class="mt-2" prepend="Patienten tar">
+				                <b-input-group size="sm" class="mt-2" prepend="Patienten tar">
 				                  <b-input-group-text slot="append">tabletter per dygn</b-input-group-text>
 				                  <b-form-input type="number" v-model="times" :min="1" :step="1">
 				                  </b-form-input type="number">
@@ -82,13 +82,13 @@
 								
 								<div class="row">
 								  <div class="col">
-				                  <b-input-group class="mt-2" prepend="Fick">
+				                  <b-input-group size="sm" class="mt-2" prepend="Fick">
 				                  <b-input-group-text slot="append">förpackningar</b-input-group-text>
 				                  <b-form-input type="number" v-model="packnum"  :min="1" :max="15"></b-form-input>
 							  </b-input-group>
 							  </div>
 							  <div class="col">
-			                  <b-input-group class="mt-2" prepend="med">
+			                  <b-input-group size="sm" class="mt-2" prepend="med">
 				                  <b-input-group-text slot="append">st. i varje förp.</b-input-group-text>
 				                  <b-form-input type="number" v-model="package" :min="10" :max="400" :step="5">
 				                  </b-input-group>
@@ -97,7 +97,7 @@
 
 								<div class="row">
 								  <div class="col">
-				                  <b-input-group class="mt-2">
+				                  <b-input-group size="sm" class="mt-2">
 				                  <b-input-group-text slot="append">{{refills}} uttag</b-input-group-text>
 				                  <b-form-input type="number" v-model="refills" :min="1" :max="10">
 				                  </b-form-input type="number">
@@ -105,9 +105,9 @@
  </div>
  
  <div class="col">
-  <b-input-group class="mt-2" prepend="Utskrivet den">
+  <b-input-group size="sm" class="mt-2" prepend="Utskrivet den">
   
-				                  <b-form-input type="date" v-model="prescrDate" type="date" placeholder="Välj ett datum">
+				                  <b-form-input size="sm" type="date" v-model="prescrDate" type="date" placeholder="Välj ett datum">
 							  </b-form-input>
 			                  </b-input-group>
 									  </div>
