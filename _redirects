@@ -2,3 +2,6 @@
 
 # Redirect default Netlify subdomain to primary domain
 https://oddquirk.netlify.com/* https://oddquirk.com/:splat 301!
+
+# Redirect to karaman.is
+/tools		https:://karaman.is/tablettraknare	301
